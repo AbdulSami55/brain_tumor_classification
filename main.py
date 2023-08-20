@@ -6,7 +6,7 @@ import cv2
 
 app = Flask(__name__)
 class_names=['glioma', 'meningioma', 'notumor', 'pituitary']
-model = tf.keras.models.load_model('brain_tumor1')
+model = tf.keras.models.load_model('brain_tumor1.h5')
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -36,5 +36,5 @@ def predition():
     }
 
 
-if __name__ == '__main__':
-    app.run(host='192.168.0.108',port=8000, debug=True)
+# if __name__ == '__main__':
+#     app.run(host='192.168.0.108',port=8000, debug=True)
